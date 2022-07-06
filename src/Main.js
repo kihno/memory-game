@@ -6,26 +6,18 @@ const Main = () => {
     const [characters, setCharacters] = useState([]);
 
     useEffect(() => {
-        for (let i = 1; i < 10; i++) {
-            let newCharacters = [];
-
-            fetch(`https://akabab.github.io/starwars-api/api/id/${i}.json`)
-            .then((res) => res.json())
-            .then((json) => {
+        fetch(`https://rawcdn.githack.com/akabab/starwars-api/0.2.1/api/all.json`)
+        .then((res) => res.json())
+        .then((json) => {
+            for (let i = 0; i < 12; i++) {
                 const char = {
-                    name: json.name,
-                    img: json.image,
+                    name: json[i].name,
+                    img: json[i].image,
                 }
-                console.log(char);
-                
-                newCharacters = newCharacters.concat(char);
-            });
 
-            setCharacters(newCharacters);
-            console.log(characters);
-        }
-
-        
+                setCharacters(prevState => [...prevState, char]);
+            }
+        });
     }, []);
 
     return (
