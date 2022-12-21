@@ -15,7 +15,6 @@ const Main = () => {
             const mainCharacters = [0, 1, 2, 3, 4, 9, 12, 13, 18, 19, 20, 33];
 
             for (let i = 0; i < mainCharacters.length; i++) {
-                console.log(mainCharacters[i]);
                 const char = {
                     name: json[mainCharacters[i]].name,
                     img: json[mainCharacters[i]].image,

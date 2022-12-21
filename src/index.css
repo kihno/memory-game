@@ -44,7 +44,25 @@ body {
   display: grid;
   justify-items: center;
   gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+}
+
+@media screen and (min-width: 600px) {
+  #cardGrid {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (min-width: 840px) {
+  #cardGrid {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  #cardGrid {
+    grid-template-columns: repeat(6, minmax(200px, 1fr));
+  }
 }
 
 .card {
